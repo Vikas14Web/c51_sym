@@ -25,7 +25,7 @@ final class IndexController extends Controller
         $offers = json_decode(file_get_contents("https://api.myjson.com/bins/lugxd"),true);
         $offers = $offers['offers'];
 
-        //print_r($offers);die;
+        error_log($offers); // log in files
 
         return $this->render('base.html.twig', [
             'offers' => $offers,
